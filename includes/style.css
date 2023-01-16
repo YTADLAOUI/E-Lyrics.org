@@ -1,0 +1,12 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.navbar{
+  box-shadow: 0 6px 10px #ddd;}
+.sidebar{
+  height: 91vh;
+  width: 10vw;
+  background-color:#dc3545;
+}
