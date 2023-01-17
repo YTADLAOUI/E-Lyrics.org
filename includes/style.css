@@ -10,21 +10,24 @@
 }
 section{
   display: flex;
-  justify-content: end;
+  justify-content: center;
   /* margin-top: 4%; */
-  width: 99vw;
+  width: 90vw;
   
 }
 .containers{
-  margin-top: 2%;
-  height: 86vh;
-  width: 90vh;
+  width: 88%;
 }
+.containarr{
+  width: 80vw;
+  display: flex;
+}
+
 .sidebar{
   margin: 0%;
-  position: absolute;
+  /* position: absolute; */
   height: 91vh;
-  width: 10vw;
+  width: 20vw;
   background-color:#dc3545;
 }
 li,a{
