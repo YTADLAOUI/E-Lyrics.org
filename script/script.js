@@ -1,6 +1,7 @@
 let form=document.getElementById("addin");
 let plus=document.getElementById("plus");
 let rv =document.getElementById("rv");
+let save = document.getElementById('save');
 let index=0
 
 rv.onclick=function(){
@@ -47,3 +48,19 @@ plus.onclick=function(){
   container.appendChild(input5)
   form.appendChild(container)
 }
+save.onclick = function() {
+  console.log('messi')
+  obj={};
+  data=[];
+  for (let i = 0; i <= index; i++) {
+    obj["title"+i]=document.getElementById(`recipient-titre_${index}`).value;
+    console.log(document.getElementById(`recipient-artiste_${index}`));
+    obj["artist"+i]=document.getElementById(`recipient-artiste_${index}`).value;
+    obj["Album"+i]=document.getElementById(`recipient-album_${index}`).value;
+    obj["année"+i]=document.getElementById(`recipient-date_${index}`).value;
+    obj["lyrics"+i]=document.getElementById(`recipient-lyrics_${index}`).value;  
+    data.push(obj);
+  }
+  console.log(data);
+}
+// save.addEventListener('click', recupere());

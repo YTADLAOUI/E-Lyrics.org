@@ -19,11 +19,11 @@
       <div class="modal-body">
         <form id="addin">
             <div>
-            <input type="text" class="form-control" id="recipient-titre" placeholder="Titre">
-            <input type="text" class="form-control" id="recipient-artist" placeholder="Artist">
-            <input type="text" class="form-control" id="recipient-album" placeholder="Album">                    
-            <input type="date" class="form-control" id="recipient-annee" placeholder="année de création">
-            <textarea class="form-control" id="recipient-lyrics" placeholder="Lyrics"></textarea>    
+            <input type="text" class="form-control" id="recipient-titre_0" placeholder="Titre">
+            <input type="text" class="form-control" id="recipient-artiste_0" placeholder="Artist">
+            <input type="text" class="form-control" id="recipient-album_0" placeholder="Album">                    
+            <input type="date" class="form-control" id="recipient-date_0" placeholder="année de création">
+            <textarea class="form-control" id="recipient-lyrics_0" placeholder="Lyrics"></textarea>    
             </div>
         </form>
       </div>
