@@ -15,19 +15,23 @@ section{
   width: 90vw;
   
 }
+.form-control{
+  margin-bottom: 3px;
+}
 .containers{
   width: 88%;
 }
 .containarr{
-  width: 80vw;
+  /* width: 80vw; */
   display: flex;
 }
 
 .sidebar{
+  padding-left: 5px;
   margin: 0%;
   /* position: absolute; */
   height: 91vh;
-  width: 20vw;
+  width: 13vw;
   background-color:#dc3545;
 }
 li,a{
@@ -43,10 +47,23 @@ li,a{
   text-align: center;
   color: white;
   font-size: 1.5em;
-  
 }
 .cards{
   width: 90vw;
+}
+.btnadd{
+  
+  border-radius: 22px;
+  border-color:#dc3545 ;
+  width: 11%;
+  background-color: #dc3545;
+  --bs-btn-hover-bg: #f38d8d;
+  --bs-btn-hover-border-color: #f38d8d;
+  --bs-btn-active-bg: #f38d8d;
+  /* --bs-btn-hover-color:#0000; */
+
+  /* --bs-btn-disabled-bg: #030303;
+  --bs-btn-disabled-border-color: #000000; */
 }
 @media only screen and (max-width: 978px) {
   .respo{
