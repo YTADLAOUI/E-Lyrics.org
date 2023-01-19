@@ -10,10 +10,10 @@ rv.onclick=function(){
      index--
   }
   
-  console.log(index);
+  // console.log(index);
 }
 
-console.log(form);
+// console.log(form);
 plus.onclick=function(){
   index++
   let container=document.createElement("div");
@@ -49,18 +49,37 @@ plus.onclick=function(){
   form.appendChild(container)
 }
 save.onclick = function() {
-  console.log('messi')
-  obj={};
   data=[];
+  
   for (let i = 0; i <= index; i++) {
-    obj["title"+i]=document.getElementById(`recipient-titre_${index}`).value;
-    console.log(document.getElementById(`recipient-artiste_${index}`));
-    obj["artist"+i]=document.getElementById(`recipient-artiste_${index}`).value;
-    obj["Album"+i]=document.getElementById(`recipient-album_${index}`).value;
-    obj["année"+i]=document.getElementById(`recipient-date_${index}`).value;
-    obj["lyrics"+i]=document.getElementById(`recipient-lyrics_${index}`).value;  
+    console.log(index);
+    console.log(i)
+    let obj={};
+    obj["title"+i]=document.querySelector(`#recipient-titre_${i}`).value;
+    console.log(document.querySelector(`#recipient-titre_${i}`).value)
+    obj["artist"+i]=document.querySelector(`#recipient-artiste_${i}`).value;
+    obj["Album"+i]=document.querySelector(`#recipient-album_${i}`).value;
+    obj["annee"+i]=document.querySelector(`#recipient-date_${i}`).value;
+    obj["lyrics"+i]=document.querySelector(`#recipient-lyrics_${i}`).value;  
     data.push(obj);
+    
   }
-  console.log(data);
+  // console.log(data);
+
+  let retuers;
+  if(data.length>0){
+   let d = JSON.stringify(data);
+   let xhr= new XMLHttpRequest();
+   xhr.open("GET","/admin/E-Lyrics.org/script/controller.php?q="+d,false);
+   xhr.onreadystatechange=function(){
+    if(xhr.readyState == 4 && xhr.status == 200){
+      retuers = JSON.parse(xhr.responseText);
+      console.log(retuers)
+  }
+   }
+   xhr.send();
+   
+  }
+   
 }
-// save.addEventListener('click', recupere());
+
