@@ -70,7 +70,7 @@ save.onclick = function() {
   if(data.length>0){
    let d = JSON.stringify(data);
    let xhr= new XMLHttpRequest();
-   xhr.open("GET","/admin/E-Lyrics.org/script/controller.php?q="+d,false);
+   xhr.open("GET","/admin/E-Lyrics.org/controllers/add.php?q="+d,false);
    xhr.onreadystatechange=function(){
     if(xhr.readyState == 4 && xhr.status == 200){
       retuers = JSON.parse(xhr.responseText);
