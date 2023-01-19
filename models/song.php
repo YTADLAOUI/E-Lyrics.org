@@ -3,15 +3,20 @@ include_once '../Database/Database.php';
  class Add extends Db{
    
   public  function insert($titre,$annee,$lyrics,$artist,$album){
-    $sql = "INSERT INTO `song`(`Titre`, `annee`, `lyrics`, `nom_artist`, `nom_album`) VALUES ('".$titre."','".$annee."','".$lyrics."','".$artist."','". $album."');";
-    // echo $sql;
-    // die;
+    $sql = "INSERT INTO `song`(`Titre`, `annee`, `lyrics`, `nom_artist`, `nom_album`) VALUES ('$titre','$annee','$lyrics','$artist','$album');";
     $stmt=$this->connect()->prepare($sql);
     $stmt->execute();
   }
-  public static function update(){
-    $sql="UPDATE `song` SET `id`='[value-1]',`Titre`='[value-2]',`année`='[value-3]',`lyrics`='[value-4]',`nom_artist`='[value-5]',`nom_album`='[value-6]'";
-    $stmt = self::connect()->prepare($sql);
+  public function read(){
+   $sql= "SELECT `id`, `Titre`, `annee`, `lyrics`, `nom_artist`, `nom_album` FROM `song`";
+   $stmt=$this->connect()->prepare($sql);
+   $stmt->execute();
+   $re=$stmt->fetchAll();
+    return $re;
+  }
+  public  function update($id,$titre,$annee,$lyrics,$artist,$album){
+    $sql="UPDATE `song` SET `Titre`='$titre',`annee`='$annee',`lyrics`='$lyrics',`nom_artist`='$artist',`nom_album`='$album' WHERE `id`=$id";
+    $stmt = $this->connect()->prepare($sql);
     $stmt->execute();
   }
  }
