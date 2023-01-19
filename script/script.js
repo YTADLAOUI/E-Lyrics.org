@@ -62,10 +62,21 @@ save.onclick = function() {
     obj["annee"+i]=document.querySelector(`#recipient-date_${i}`).value;
     obj["lyrics"+i]=document.querySelector(`#recipient-lyrics_${i}`).value;  
     data.push(obj);
-    
+     clearTasks();
   }
-  // console.log(data);
+ 
 
+    // Set Task coun
+}
+  // console.log(data);
+  function clearTasks() {
+    let inputs = document.querySelectorAll('input')
+    let tex = document.querySelector('textarea')
+    inputs.forEach(input => {
+        input.value = ''
+    });
+    tex.value = ''
+}
   let retuers;
   if(data.length>0){
    let d = JSON.stringify(data);
@@ -78,8 +89,7 @@ save.onclick = function() {
   }
    }
    xhr.send();
-   
   }
    
-}
+
 

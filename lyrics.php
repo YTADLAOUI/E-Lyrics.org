@@ -31,7 +31,7 @@
         <button type="button" class="btn btn-danger" id="rv"><i class="bi bi-trash3-fill"></i></button>
         <button type="button" class="btn btn-success" id="plus"><i class="bi bi-plus-circle"></i></button>
         <button type="button" class="btn btn-secondary" id="close" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary"id ="save">Save</button>
+        <button type="button" class="btn btn-primary"id ="save" data-bs-dismiss="modal">Save</button>
       </div>
     </div>
   </div>
@@ -44,9 +44,11 @@
               <thead>
                 <tr>
                   <th scope="col">#</th>
-                  <th scope="col">First</th>
-                  <th scope="col">Last</th>
-                  <th scope="col">Handle</th>
+                  <th scope="col">Titre</th>
+                  <th scope="col">Nom d'artiste</th>
+                  <th scope="col">Nom d'album</th>
+                  <th scope="col">année de creation</th>
+                  <th scope="col">Lyrics</th>
                 </tr>
               </thead>
               <tbody>
