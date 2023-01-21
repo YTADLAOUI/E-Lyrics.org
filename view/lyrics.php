@@ -1,10 +1,12 @@
 <?php 
  include_once '../controllers/admincontroller.php';
+ include_once '../controllers/read.php';
  
 if(!isset($_SESSION['name'])){
   header('Location: http://localhost/admin/E-Lyrics.org/view/');
 }
 ?>
+
 <?php include '../includes/hedear.php'; ?>
 <body class="">
     <?php include '../includes/navbar.php'; ?>
@@ -55,26 +57,23 @@ if(!isset($_SESSION['name'])){
                   <th scope="col">Nom d'album</th>
                   <th scope="col">année de creation</th>
                   <th scope="col">Lyrics</th>
+                  <th scope="col">options</th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
+                <?php 
+                for ($i=0; $i <sizeof($lyrics) ; $i++) {?>
+                  <tr>
+                  <th scope="row"><?php echo $lyrics[$i]["id"] ?></th>
+                  <td><?php echo $lyrics[$i]["Titre"] ?></td>
+                  <td><?php echo $lyrics[$i]["nom_artist"] ?></td>
+                  <td><?php echo $lyrics[$i]["nom_album"] ?></td>
+                  <td><?php echo $lyrics[$i]["annee"] ?></td>
+                  <td><?php echo $lyrics[$i]["lyrics"] ?></td>
+                  <td><button>ub</button></td>
                 </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>@fat</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td colspan="2">Larry the Bird</td>
-                  <td>@twitter</td>
-                </tr>
+                 <?php } ?>
+                
               </tbody>
             </table>
           </div>

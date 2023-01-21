@@ -11,7 +11,7 @@ include_once '../Database/Database.php';
    $sql= "SELECT `id`, `Titre`, `annee`, `lyrics`, `nom_artist`, `nom_album` FROM `song`";
    $stmt=$this->connect()->prepare($sql);
    $stmt->execute();
-   $re=$stmt->fetchAll();
+   $re=$stmt->fetchAll(PDO::FETCH_ASSOC);
     return $re;
   }
   public  function update($id,$titre,$annee,$lyrics,$artist,$album){
@@ -19,5 +19,11 @@ include_once '../Database/Database.php';
     $stmt = $this->connect()->prepare($sql);
     $stmt->execute();
   }
+  public function delete($id){
+    $sql="DELETE FROM `song` WHERE `id`=$id";
+    $stmt = $this->connect()->prepare($sql);
+    $stmt->execute();
+  }
  }
+
 ?>

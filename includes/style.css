@@ -12,14 +12,14 @@ section{
   display: flex;
   justify-content: center;
   /* margin-top: 4%; */
-  width: 90vw;
+  /* width: 90vw; */
   
 }
 .form-control{
   margin-bottom: 3px;
 }
 .containers{
-  width: 88%;
+  /* width: 88%; */
 }
 .containarr{
   /* width: 80vw; */
@@ -30,7 +30,7 @@ section{
   padding-left: 5px;
   margin: 0%;
   /* position: absolute; */
-  height: 91vh;
+  /* height: 91vh; */
   width: 13vw;
   background-color:#dc3545;
 }

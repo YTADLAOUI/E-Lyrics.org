@@ -2,6 +2,7 @@ let form=document.getElementById("addin");
 let plus=document.getElementById("plus");
 let rv =document.getElementById("rv");
 let save = document.getElementById('save');
+//let inputs = document.querySelectorAll('input').value;
 let index=0
 let data=[];
 
@@ -61,25 +62,16 @@ save.onclick = function() {
     obj["annee"+i]=document.querySelector(`#recipient-date_${i}`).value;
     obj["lyrics"+i]=document.querySelector(`#recipient-lyrics_${i}`).value;  
     data.push(obj);
-     let retuers;
+    
   if(data.length>0){
     //console.log("hello");
    let d = JSON.stringify(data);
    let xhr= new XMLHttpRequest();
    xhr.open("GET","/admin/E-Lyrics.org/controllers/add.php?q="+d,false);
-   xhr.onreadystatechange=function(){
-    if(xhr.readyState == 4 && xhr.status == 200){
-      retuers = JSON.parse(xhr.responseText);
-      console.log(retuers)
-  }
-   }
    xhr.send();
+  }   
   }
-     //clearTasks();
-  }
- 
 
-    // Set Task coun
 }
   // console.log(data);
 //   function clearTasks() {
