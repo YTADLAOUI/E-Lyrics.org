@@ -2,6 +2,7 @@ let form=document.getElementById("addin");
 let plus=document.getElementById("plus");
 let rv =document.getElementById("rv");
 let save = document.getElementById('save');
+let upd = document.getElementById('upd');
 //let inputs = document.querySelectorAll('input').value;
 let index=0
 let data=[];
@@ -72,6 +73,13 @@ save.onclick = function() {
   }   
   }
 
+}
+upd.onclick = function(){
+document.querySelector("#recipient-titre_0").value;
+document.querySelector("#recipient-artiste_0").value;
+document.querySelector("#recipient-album_0").value;
+document.querySelector("#recipient-date_0").value;
+document.querySelector("#recipient-lyrics_0").value;
 }
   // console.log(data);
 //   function clearTasks() {

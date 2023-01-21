@@ -70,7 +70,12 @@ if(!isset($_SESSION['name'])){
                   <td><?php echo $lyrics[$i]["nom_album"] ?></td>
                   <td><?php echo $lyrics[$i]["annee"] ?></td>
                   <td><?php echo $lyrics[$i]["lyrics"] ?></td>
-                  <td><button>ub</button></td>
+                  <td>
+                    <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                    <button type="button" id="upd" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal" >U</button>
+                    <button type="button" class="btn btn-danger">D</button>
+                    </div>
+                  </td>
                 </tr>
                  <?php } ?>
                 
