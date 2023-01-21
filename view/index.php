@@ -1,4 +1,4 @@
-<?php include './includes/hedear.php'; ?>
+<?php include '../includes/hedear.php'; ?>
 <style>
         @import url("https://fonts.googleapis.com/css?family=Lato:400,700");
         body{
@@ -14,7 +14,7 @@
             width: 100%;
             height :100%;
             position: fixed;
-            background-image: url('img/guitar.jpg');
+            background-image: url('../img/guitar.jpg');
             background-size : cover;
             filter: blur(5px);
             
@@ -69,9 +69,6 @@
             
        }
        
-
-
-       
        /* .ss{margin-left: -522px;} */
     </style>
 </head>
@@ -84,7 +81,7 @@
 <div class="text-white h1 position-relative"><a href=""class="text-decoration-none text-white"><span class="navbar-logo text-danger "><i class="bi bi-music-note-list"></i></span> <b class="name-logo">E-Lyrics</b></a></div>
 </nav>
     <div class="fors">    
-    <form class="" action = "script.php" method ="POST" data-parsley-validate>
+    <form class="" action = "../controllers/admincontroller.php" method ="POST" data-parsley-validate>
         <div class="container">
            
             <h1>Sign In</h1>

@@ -13,14 +13,14 @@ function con(){
     //echo $psw;
     if($email==$user[0]["email"] && $psw==$user[0]["psw"]){
         $_SESSION['name']=$user[0]["nom"];
-        header('Location: http://localhost/admin/E-Lyrics.org/page/accuile.php');
+        header('Location: http://localhost/admin/E-Lyrics.org/view/accuile.php');
     }else{
-        header('Location: http://localhost/admin/E-Lyrics.org/page?message/');
+        header('Location: http://localhost/admin/E-Lyrics.org/view?message/');
         $_SESSION['message'] = "s'il vous plait check votre information!";
     }
 }
 function logout(){
     unset($_SESSION['name']);
-    header('Location: http://localhost/admin/E-Lyrics.org/page/');
+    header('Location: http://localhost/admin/E-Lyrics.org/view/');
 }
 ?>

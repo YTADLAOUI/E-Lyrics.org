@@ -1,9 +1,15 @@
-<?php include './includes/hedear.php'; ?>
-<?php include './includes/hedear.php';?>
+<?php 
+ include_once '../controllers/admincontroller.php';
+ 
+if(!isset($_SESSION['name'])){
+  header('Location: http://localhost/admin/E-Lyrics.org/view/');
+}
+?>
+<?php include '../includes/hedear.php'; ?>
 <body class="">
-    <?php include './includes/navbar.php'; ?>
+    <?php include '../includes/navbar.php'; ?>
   <div class="containarr">
-    <?php include './includes/sidebar.php';?>
+    <?php include '../includes/sidebar.php';?>
     <div class="containers">
       <main class="ps-3 pt-4 d-flex justify-content-between w-100">
         <div><h1 class="text-color-dark ">Lyrics</h1></div>
@@ -75,6 +81,6 @@
         </section>
     </div>
   </div>
-  <script src="./script/script.js"></script>
+  <script src="../script/script.js"></script>
 </body>
 </html>
