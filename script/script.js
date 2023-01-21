@@ -3,6 +3,7 @@ let plus=document.getElementById("plus");
 let rv =document.getElementById("rv");
 let save = document.getElementById('save');
 let index=0
+let data=[];
 
 rv.onclick=function(){
   if(index>0){
@@ -49,11 +50,9 @@ plus.onclick=function(){
   form.appendChild(container)
 }
 save.onclick = function() {
-  data=[];
-  
   for (let i = 0; i <= index; i++) {
-    console.log(index);
-    console.log(i)
+    //console.log(index);
+    //console.log(i)
     let obj={};
     obj["title"+i]=document.querySelector(`#recipient-titre_${i}`).value;
     console.log(document.querySelector(`#recipient-titre_${i}`).value)
@@ -62,23 +61,9 @@ save.onclick = function() {
     obj["annee"+i]=document.querySelector(`#recipient-date_${i}`).value;
     obj["lyrics"+i]=document.querySelector(`#recipient-lyrics_${i}`).value;  
     data.push(obj);
-     clearTasks();
-  }
- 
-
-    // Set Task coun
-}
-  // console.log(data);
-  function clearTasks() {
-    let inputs = document.querySelectorAll('input')
-    let tex = document.querySelector('textarea')
-    inputs.forEach(input => {
-        input.value = ''
-    });
-    tex.value = ''
-}
-  let retuers;
+     let retuers;
   if(data.length>0){
+    //console.log("hello");
    let d = JSON.stringify(data);
    let xhr= new XMLHttpRequest();
    xhr.open("GET","/admin/E-Lyrics.org/controllers/add.php?q="+d,false);
@@ -90,6 +75,22 @@ save.onclick = function() {
    }
    xhr.send();
   }
+     //clearTasks();
+  }
+ 
+
+    // Set Task coun
+}
+  // console.log(data);
+//   function clearTasks() {
+//     let inputs = document.querySelectorAll('input')
+//     let tex = document.querySelector('textarea')
+//     inputs.forEach(input => {
+//         input.value = ''
+//     });
+//     tex.value = ''
+// }
+ 
    
 
 
