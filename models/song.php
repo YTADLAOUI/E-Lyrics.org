@@ -24,6 +24,13 @@ include_once '../Database/Database.php';
     $stmt = $this->connect()->prepare($sql);
     $stmt->execute();
   }
+  public function edit($id){
+    $sql= "SELECT `id`, `Titre`, `annee`, `lyrics`, `nom_artist`, `nom_album` FROM `song` WHERE `id`=$id";
+   $stmt=$this->connect()->prepare($sql);
+   $stmt->execute();
+   $re=$stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $re;
+  }
  }
 
 ?>

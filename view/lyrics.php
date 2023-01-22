@@ -1,7 +1,6 @@
 <?php 
  include_once '../controllers/admincontroller.php';
  include_once '../controllers/read.php';
- echo $_SESSION['name'];
 if(!isset($_SESSION['name'])){
   header('Location: http://localhost/admin/E-Lyrics.org/view/');
 }
@@ -39,7 +38,8 @@ if(!isset($_SESSION['name'])){
         <button type="button" class="btn btn-danger" id="rv"><i class="bi bi-trash3-fill"></i></button>
         <button type="button" class="btn btn-success" id="plus"><i class="bi bi-plus-circle"></i></button>
         <button type="button" class="btn btn-secondary" id="close" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary"id ="save" data-bs-dismiss="modal">Save</button>
+        <button type="button" class="btn btn-primary" id ="save" data-bs-dismiss="modal">Save</button>
+        <button type="button" class="btn btn-warning" id ="save" data-bs-dismiss="modal">update</button>
       </div>
     </div>
   </div>
@@ -65,16 +65,16 @@ if(!isset($_SESSION['name'])){
                 <?php 
                 for ($i=0; $i <sizeof($lyrics) ; $i++) {?>
                   <tr>
-                  <th scope="row"><?php echo $lyrics[$i]["id"] ?></th>
-                  <td><?php echo $lyrics[$i]["Titre"] ?></td>
-                  <td><?php echo $lyrics[$i]["nom_artist"] ?></td>
-                  <td><?php echo $lyrics[$i]["nom_album"] ?></td>
-                  <td><?php echo $lyrics[$i]["annee"] ?></td>
-                  <td><?php echo $lyrics[$i]["lyrics"] ?></td>
+                  <th scope="row"><?= $i+1 ?></th>
+                  <td><?= $lyrics[$i]["Titre"] ?></td>
+                  <td><?= $lyrics[$i]["nom_artist"] ?></td>
+                  <td><?= $lyrics[$i]["nom_album"] ?></td>
+                  <td><?= $lyrics[$i]["annee"] ?></td>
+                  <td><?= $lyrics[$i]["lyrics"] ?></td>
                   <td>
                     <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                    <button type="button" id="upd" class="btn btn-warning me-1"  data-bs-toggle="modal" data-bs-target="#exampleModal" ><i class="bi bi-pencil-square"></i></button>
-                    <a href="../controllers/delete.php?idd=<?php echo $lyrics[$i]["id"]?>"><button type="button" class="btn btn-danger"><i class="bi bi-trash"></i></button></a>
+                    <button type="button" id="upd" class="update btn btn-warning me-1"  data-bs-toggle="modal" data-bs-target="#exampleModal" ><i class="bi bi-pencil-square"></i></button>
+                    <a href="../controllers/delete.php?idd=<?= $lyrics[$i]["id"]?>"><button type="button" class="btn btn-danger"><i class="bi bi-trash"></i></button></a>
                     </div>
                   </td>
                 </tr>

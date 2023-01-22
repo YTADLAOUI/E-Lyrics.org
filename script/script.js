@@ -5,7 +5,8 @@ let form = document.getElementById("addin");
 let plus = document.getElementById("plus");
 let rv = document.getElementById("rv");
 let save = document.getElementById('save');
-let upd = document.getElementById('upd');
+// let upd = document.getElementById('upd');
+let upd = document.querySelectorAll(".update");
 //let inputs = document.querySelectorAll('input').value;
 let index = 0
 let data = [];
@@ -18,6 +19,8 @@ rv.onclick = function() {
 
     // console.log(index);
 }
+
+console.log(upd);
 
 // console.log(form);
 plus.onclick = function() {
@@ -76,19 +79,35 @@ save.onclick = function() {
         xhr.send();
     }
 }
-upd.onclick = function() {
-        document.querySelector("#recipient-titre_0").value;
-        document.querySelector("#recipient-artiste_0").value;
-        document.querySelector("#recipient-album_0").value;
-        document.querySelector("#recipient-date_0").value;
-        document.querySelector("#recipient-lyrics_0").value;
-    }
-    // console.log(data);
-    //   function clearTasks() {
-    //     let inputs = document.querySelectorAll('input')
-    //     let tex = document.querySelector('textarea')
-    //     inputs.forEach(input => {
-    //         input.value = ''
-    //     });
-    //     tex.value = ''
-    // }
+for (let i = 0; i < upd.length; i++) {
+    // const element = array[i];
+    upd[i].addEventListener('click', function() {
+            clearTasks();
+            let td = this.parentElement.parentElement.parentElement;
+            let data = [];
+            // console.log(td.length);
+            // console.log(td.children);
+            for (let i = 1; i < td.children.length - 1; i++) {
+                // console.log(td.children[i].innerHTML);
+                data.push(td.children[i].innerHTML);
+            }
+            console.log(data);
+
+            document.querySelector("#recipient-titre_0").value = data[0];
+            document.querySelector("#recipient-artiste_0").value = data[1];
+            document.querySelector("#recipient-album_0").value = data[2];
+            document.querySelector("#recipient-date_0").value = data[3];
+            document.querySelector("#recipient-lyrics_0").value = data[4];
+        }
+        // console.log(data);
+    )
+}
+
+function clearTasks() {
+    let inputs = document.querySelectorAll('input')
+    let tex = document.querySelector('textarea')
+    inputs.forEach(input => {
+        input.value = ''
+    });
+    tex.value = ''
+}
