@@ -48,7 +48,8 @@ if(!isset($_SESSION['name'])){
       </main>
       <section class="w-100">
           <div class="w-100 p-5" >
-            <table class="table">
+            <!-- <table class="table"> -->
+            <table id="table" class="table table-striped" style="width:100%">
               <thead>
                 <tr>
                   <th scope="col">#</th>
@@ -72,8 +73,8 @@ if(!isset($_SESSION['name'])){
                   <td><?php echo $lyrics[$i]["lyrics"] ?></td>
                   <td>
                     <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                    <button type="button" id="upd" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal" >U</button>
-                    <button type="button" class="btn btn-danger">D</button>
+                    <button type="button" id="upd" class="btn btn-warning me-1"  data-bs-toggle="modal" data-bs-target="#exampleModal" ><i class="bi bi-pencil-square"></i></button>
+                    <a href="../controllers/delete.php?idd=<?php echo $lyrics[$i]["id"]?>"><button type="button" class="btn btn-danger"><i class="bi bi-trash"></i></button></a>
                     </div>
                   </td>
                 </tr>
@@ -85,6 +86,9 @@ if(!isset($_SESSION['name'])){
         </section>
     </div>
   </div>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js"></script>
   <script src="../script/script.js"></script>
 </body>
 </html>
