@@ -26,6 +26,7 @@ if(!isset($_SESSION['name'])){
       <div class="modal-body">
         <form id="addin">
             <div>
+            <input type="hidden" id="hid" placeholder="hid">
             <input type="text" class="form-control" id="recipient-titre_0" placeholder="Titre">
             <input type="text" class="form-control" id="recipient-artiste_0" placeholder="Artist">
             <input type="text" class="form-control" id="recipient-album_0" placeholder="Album">                    
@@ -65,7 +66,7 @@ if(!isset($_SESSION['name'])){
                 <?php 
                 for ($i=0; $i <sizeof($lyrics) ; $i++) {?>
                   <tr>
-                  <th scope="row"><?= $i+1 ?></th>
+                  <th scope="row"><?= $lyrics[$i]["id"] ?></th>
                   <td><?= $lyrics[$i]["Titre"] ?></td>
                   <td><?= $lyrics[$i]["nom_artist"] ?></td>
                   <td><?= $lyrics[$i]["nom_album"] ?></td>
