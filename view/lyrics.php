@@ -1,7 +1,7 @@
 <?php 
  include_once '../controllers/admincontroller.php';
  include_once '../controllers/read.php';
- 
+ echo $_SESSION['name'];
 if(!isset($_SESSION['name'])){
   header('Location: http://localhost/admin/E-Lyrics.org/view/');
 }

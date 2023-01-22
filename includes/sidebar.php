@@ -11,7 +11,7 @@
         <b><a href="#"><i class="bi bi-person"></i>Admin</a></b>
         </li>
         <li class="mt-2 siz">
-            <b><a href="index.php"><i class="bi bi-box-arrow-left"></i> Logout</a></b>
+            <b><a href="../controllers/admincontroller.php?log"><i class="bi bi-box-arrow-left"></i> Logout</a></b>
         </li>
     </div>               
     

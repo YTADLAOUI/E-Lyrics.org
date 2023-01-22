@@ -2,11 +2,6 @@
   <div class="container-fluid">
     <b><a class="navbar-brand text-light">E-Lyrics</a></b>
     <form class="d-flex" role="search">
-    <?php if (isset($_GET["serach"])) {
-      echo '<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-light me-2" type="submit">Search</button>';
-    }?>
-     
       <div class="respo">
       <button class="navbar-toggler me-2 "  type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
                 <span class="navbar-toggler-icon " data-bs-target="#offcanvasRight"></span>
@@ -29,7 +24,7 @@
                   <a href="#"><i class="fa fa-fw fa-table"></i> Admin</a>
               </li>
               <li class="mt-2 siz">
-                  <a href="index.php"><i class="bi bi-box-arrow-left"></i>Logout</a>
+                  <a href="../controllers/admincontroller.php?log"><i class="bi bi-box-arrow-left"></i>Logout</a>
               </li>
           </div>  
           <!-- hh -->
