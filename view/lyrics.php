@@ -39,7 +39,7 @@ if(!isset($_SESSION['name'])){
         <button type="button" class="btn btn-success" id="plus"><i class="bi bi-plus-circle"></i></button>
         <button type="button" class="btn btn-secondary" id="close" data-bs-dismiss="modal">Close</button>
         <button type="button" class="btn btn-primary" id ="save" data-bs-dismiss="modal">Save</button>
-        <button type="button" class="btn btn-warning" id ="save" data-bs-dismiss="modal">update</button>
+        <button type="button" class="btn btn-warning" id ="send" data-bs-dismiss="modal">update</button>
       </div>
     </div>
   </div>

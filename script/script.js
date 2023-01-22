@@ -8,8 +8,10 @@ let save = document.getElementById('save');
 // let upd = document.getElementById('upd');
 let upd = document.querySelectorAll(".update");
 //let inputs = document.querySelectorAll('input').value;
-let index = 0
+let send = document.querySelector("#send")
+let index = 0;
 let data = [];
+
 
 rv.onclick = function() {
     if (index > 0) {
@@ -19,7 +21,6 @@ rv.onclick = function() {
 
     // console.log(index);
 }
-
 console.log(upd);
 
 // console.log(form);
@@ -58,6 +59,7 @@ plus.onclick = function() {
     form.appendChild(container)
 }
 save.onclick = function() {
+
     for (let i = 0; i <= index; i++) {
         //console.log(index);
         //console.log(i)
@@ -78,36 +80,43 @@ save.onclick = function() {
         xhr.open("GET", "/admin/E-Lyrics.org/controllers/add.php?q=" + d, false);
         xhr.send();
     }
+    clearTasks();
 }
+
 for (let i = 0; i < upd.length; i++) {
     // const element = array[i];
+    let dataup = [];
     upd[i].addEventListener('click', function() {
-            clearTasks();
-            let td = this.parentElement.parentElement.parentElement;
-            let data = [];
-            // console.log(td.length);
-            // console.log(td.children);
-            for (let i = 1; i < td.children.length - 1; i++) {
-                // console.log(td.children[i].innerHTML);
-                data.push(td.children[i].innerHTML);
-            }
-            console.log(data);
-
-            document.querySelector("#recipient-titre_0").value = data[0];
-            document.querySelector("#recipient-artiste_0").value = data[1];
-            document.querySelector("#recipient-album_0").value = data[2];
-            document.querySelector("#recipient-date_0").value = data[3];
-            document.querySelector("#recipient-lyrics_0").value = data[4];
+        let td = this.parentElement.parentElement.parentElement;
+        // console.log(td.length);
+        // console.log(td.children);
+        for (let i = 1; i < td.children.length - 1; i++) {
+            // console.log(td.children[i].innerHTML);
+            dataup.push(td.children[i].innerHTML);
         }
-        // console.log(data);
-    )
+        document.querySelector("#recipient-titre_0").value = dataup[0];
+        document.querySelector("#recipient-artiste_0").value = dataup[1];
+        document.querySelector("#recipient-album_0").value = dataup[2];
+        document.querySelector("#recipient-date_0").value = dataup[3];
+        document.querySelector("#recipient-lyrics_0").value = dataup[4];
+    })
 }
+
+// send.onclick = function() {
+//     let table = [];
+//     table = document.querySelector("#recipient-titre_0").value
+//     table = document.querySelector("#recipient-artiste_0").value
+//     table = document.querySelector("#recipient-album_0").value
+//     table = document.querySelector("#recipient-date_0").value
+//     table = document.querySelector("#recipient-lyrics_0").value
+//     console.log(table);
+// }
 
 function clearTasks() {
     let inputs = document.querySelectorAll('input')
     let tex = document.querySelector('textarea')
     inputs.forEach(input => {
-        input.value = ''
+        input.value = '';
     });
-    tex.value = ''
+    tex.value = '';
 }
