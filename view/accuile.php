@@ -10,7 +10,7 @@ if(!isset($_SESSION['name'])){
 <?php include '../includes/navbar.php'; ?>
   <div class="containarr">
     <?php include '../includes/sidebar.php';?>
-    <div class="">
+    <div class="w-100">
       <main class="ps-3 pt-4 " ><h1 class="text-color-dark ">Dashboard</h1></main>
       <section>
       <div class="row cards" >
