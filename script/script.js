@@ -62,17 +62,17 @@ plus.onclick = function() {
 save.onclick = function() {
      
     for (let i = 0; i <= index; i++) {
-        //console.log(index);
-        //console.log(i)
+        if(document.querySelector(`#recipient-titre_${i}`).value== '' && document.querySelector(`#recipient-artiste_${i}`).value=="" && document.querySelector(`#recipient-album_${i}`).value=="" && document.querySelector(`#recipient-date_${i}`).value=="" && document.querySelector(`#recipient-lyrics_${i}`).value==""){
+            document.querySelector("#aleart").innerHTML=`s'il vous plaît remplies tous les inputs`
+        }else{
         let obj = {};
         obj["title" + i] = document.querySelector(`#recipient-titre_${i}`).value;
-        //console.log(document.querySelector(`#recipient-titre_${i}`).value)
         obj["artist" + i] = document.querySelector(`#recipient-artiste_${i}`).value;
         obj["Album" + i] = document.querySelector(`#recipient-album_${i}`).value;
         obj["annee" + i] = document.querySelector(`#recipient-date_${i}`).value;
         obj["lyrics" + i] = document.querySelector(`#recipient-lyrics_${i}`).value;
         data.push(obj);
-    }
+    }}
 
     if (data.length > 0) {
         //console.log("hello");
@@ -93,6 +93,7 @@ for (let i = 0; i < upd.length; i++) {
         plus.style.display="none";
         rv.style.display="none";
         send.style.display="block";
+        
         let td = this.parentElement.parentElement.parentElement;
         //console.log(td);
         //console.log(td.children);

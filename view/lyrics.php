@@ -20,6 +20,7 @@ if(!isset($_SESSION['name'])){
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
+        <div id= aleart></div>
         <h1 class="modal-title fs-5" id="exampleModalLabel"></h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
@@ -27,11 +28,11 @@ if(!isset($_SESSION['name'])){
         <form id="addin">
             <div>
             <input type="hidden" id="hid" placeholder="hid">
-            <input type="text" class="form-control" id="recipient-titre_0" placeholder="Titre">
+            <input type="text" class="form-control" id="recipient-titre_0" placeholder="Titre" >
             <input type="text" class="form-control" id="recipient-artiste_0" placeholder="Artist">
-            <input type="text" class="form-control" id="recipient-album_0" placeholder="Album">                    
+            <input type="text" class="form-control" id="recipient-album_0" placeholder="Album" >                    
             <input type="date" class="form-control" id="recipient-date_0" placeholder="année de création">
-            <textarea class="form-control" id="recipient-lyrics_0" placeholder="Lyrics"></textarea>    
+            <textarea class="form-control" id="recipient-lyrics_0" placeholder="Lyrics" ></textarea>    
             </div>
         </form>
       </div>
@@ -39,7 +40,7 @@ if(!isset($_SESSION['name'])){
         <button type="button" class="btn btn-danger" id="rv"><i class="bi bi-trash3-fill"></i></button>
         <button type="button" class="btn btn-success" id="plus"><i class="bi bi-plus-circle"></i></button>
         <button type="button" class="btn btn-secondary" id="close" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" id ="save" data-bs-dismiss="modal">Save</button>
+        <button type="button" class="btn btn-primary" id ="save" >Save</button>
         <button type="button" class="btn btn-warning" id ="send" data-bs-dismiss="modal">update</button>
       </div>
     </div>
