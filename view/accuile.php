@@ -1,5 +1,6 @@
 <?php 
  include_once '../controllers/admincontroller.php';
+include_once '../controllers/countStatistique.php';
  
 if(!isset($_SESSION['name'])){
   header('Location: http://localhost/admin/E-Lyrics.org/view/');
@@ -15,20 +16,20 @@ if(!isset($_SESSION['name'])){
       <section>
       <div class="row cards" >
                       <div class="col-md-4 mb-3">
-                          <div class="card bg-dark text-white h-100">
-                              <div class="card-body py-5">Primary Card</div>
+                          <div class="card bg-dark text-white h-100 ico">
+                              <div class="card-body py-5"><i class="bi bi-people-fill text-white "> Admin</i><?= $countadmin[0]["email"]?></div>
                               
                           </div>
                       </div>
                       <div class="col-md-4 mb-3">
-                          <div class="card bg-dark text-white h-100">
-                            <div class="card-body py-5">Warning Card</div>
+                          <div class="card bg-dark text-white h-100 ico">
+                            <div class="card-body py-5"><i class="bi bi-star text-white "> Artist</i><?= $countartist[0]["artist"] ?></div>
                             
                           </div>
                       </div>
                       <div class="col-md-4 mb-3">
-                          <div class="card bg-dark text-white h-100">
-                            <div class="card-body py-5">Success Card</div>
+                          <div class="card bg-dark text-white h-100 ico">
+                            <div class="card-body py-5"><i class="bi bi-disc-fill text-white"> Album</i><?= $countAlbum[0]["album"] ?></div>
                             
                           </div>
                       </div>

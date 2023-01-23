@@ -8,6 +8,13 @@ class Admin extends Db{
         $re=$stmt->fetchAll(PDO::FETCH_ASSOC);
         return $re;
      }
+     public function countAdmin(){
+        $sql = "SELECT DISTINCT COUNT(email) email FROM admin";
+        $stmt=$this->connect()->prepare($sql);
+        $stmt->execute();
+        $re=$stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $re;
+     }
 }
 
 

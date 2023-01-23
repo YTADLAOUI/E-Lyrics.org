@@ -15,7 +15,7 @@ if(!isset($_SESSION['name'])){
       <main class="ps-3 pt-4 d-flex justify-content-between w-100">
         <div><h1 class="text-color-dark ">Lyrics</h1></div>
         <!-- model -->
-        <button type="button" class="btn btn-primary me-4 btnadd" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@fat">+add Lyrics</button>
+        <button type="button" class="btn btn-primary me-4 btnadd" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@fat">Add Lyrics</button>
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -48,9 +48,10 @@ if(!isset($_SESSION['name'])){
         <!-- fin mode -->
       </main>
       <section class="w-100">
-          <div class="w-100 p-5" >
+          <div class="w-100 p-5"  style="overflow-x: scroll;
+  overflow-y: hidden;">
             <!-- <table class="table"> -->
-            <table id="table" class="table table-striped" style="width:100%">
+            <table id="table" class="table table-striped">
               <thead>
                 <tr>
                   <th scope="col">#</th>

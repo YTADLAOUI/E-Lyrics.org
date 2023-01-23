@@ -24,6 +24,20 @@ include_once '../Database/Database.php';
     $stmt = $this->connect()->prepare($sql);
     $stmt->execute();
   }
+  public function countArtist(){
+    $sql = "SELECT COUNT(DISTINCT(nom_artist)) artist FROM song";
+    $stmt=$this->connect()->prepare($sql);
+    $stmt->execute();
+    $re=$stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $re;
+ }
+ public function countAlbum(){
+  $sql = "SELECT  COUNT(DISTINCT(nom_album)) album FROM song";
+  $stmt=$this->connect()->prepare($sql);
+  $stmt->execute();
+  $re=$stmt->fetchAll(PDO::FETCH_ASSOC);
+  return $re;
+}
  }
 
 ?>

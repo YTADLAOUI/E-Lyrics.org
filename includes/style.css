@@ -34,7 +34,7 @@ section {
     padding-left: 5px;
     margin: 0%;
     /* position: absolute; */
-    height: 100vh;
+     min-height: 92.7vh; 
     width: 13vw;
     background-color: #dc3545;
 }
@@ -76,11 +76,20 @@ a {
     /* --bs-btn-disabled-bg: #030303;
   --bs-btn-disabled-border-color: #000000; */
 }
-
+.ico{
+  font-size: 2em;
+}
+.card-body{   
+  display: flex;
+  flex-direction: column;
+  align-items: center;}
 @media only screen and (max-width: 978px) {
     .respo {
         display: block;
         height: 100%;
+    }
+    .btnadd{
+      width: 17%;
     }
     a {
         color: rgb(0, 0, 0);

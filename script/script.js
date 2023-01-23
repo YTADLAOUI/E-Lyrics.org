@@ -5,6 +5,7 @@ let form = document.getElementById("addin");
 let plus = document.getElementById("plus");
 let rv = document.getElementById("rv");
 let save = document.getElementById('save');
+let add =document.querySelector(".btnadd");
 // let upd = document.getElementById('upd');
 let upd = document.querySelectorAll(".update");
 //let inputs = document.querySelectorAll('input').value;
@@ -59,7 +60,7 @@ plus.onclick = function() {
     form.appendChild(container)
 }
 save.onclick = function() {
-
+     
     for (let i = 0; i <= index; i++) {
         //console.log(index);
         //console.log(i)
@@ -80,6 +81,7 @@ save.onclick = function() {
         xhr.open("GET", "/admin/E-Lyrics.org/controllers/add.php?q=" + d, false);
         xhr.send();
     }
+    location.reload();
     clearTasks();
 }
 
@@ -87,6 +89,10 @@ for (let i = 0; i < upd.length; i++) {
     // const element = array[i];
     let dataup = [];
     upd[i].addEventListener('click', function() {
+        save.style.display="none";
+        plus.style.display="none";
+        rv.style.display="none";
+        send.style.display="block";
         let td = this.parentElement.parentElement.parentElement;
         //console.log(td);
         //console.log(td.children);
@@ -107,19 +113,25 @@ for (let i = 0; i < upd.length; i++) {
 send.onclick = function() {
     let table = [];
 
-    table[0] = document.querySelector("#hid").value
-    table[1] = document.querySelector("#recipient-titre_0").value
-    table[2] = document.querySelector("#recipient-artiste_0").value
-    table[3] = document.querySelector("#recipient-album_0").value
-    table[4] = document.querySelector("#recipient-date_0").value
-    table[5] = document.querySelector("#recipient-lyrics_0").value
+    table[0] = document.querySelector("#hid").value;
+    table[1] = document.querySelector("#recipient-titre_0").value;
+    table[2] = document.querySelector("#recipient-artiste_0").value;
+    table[3] = document.querySelector("#recipient-album_0").value;
+    table[4] = document.querySelector("#recipient-date_0").value;
+    table[5] = document.querySelector("#recipient-lyrics_0").value;
         //console.log(table);
     tbl = JSON.stringify(table);
     xhr = new XMLHttpRequest();
     xhr.open("GET", "http://localhost/admin/E-Lyrics.org/controllers/update.php?t=" + tbl, false);
     xhr.send();
+    location.reload();
 }
-
+add.onclick=function(){
+  send.style.display="none";
+  save.style.display="block";
+  plus.style.display="block";
+  rv.style.display="block";
+}
 function clearTasks() {
     let inputs = document.querySelectorAll('input')
     let tex = document.querySelector('textarea')
