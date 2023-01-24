@@ -67,16 +67,35 @@ if(!isset($_SESSION['name'])){
               <tbody>
                 <?php 
                 for ($i=0; $i <sizeof($lyrics) ; $i++) {?>
-                  <tr>
-                  <th scope="row"><?= $lyrics[$i]["id"] ?></th>
-                  <td><?= $lyrics[$i]["Titre"] ?></td>
-                  <td><?= $lyrics[$i]["nom_artist"] ?></td>
-                  <td><?= $lyrics[$i]["nom_album"] ?></td>
-                  <td><?= $lyrics[$i]["annee"] ?></td>
-                  <td><?= $lyrics[$i]["lyrics"] ?></td>
+                  <tr data="<?=$i?>">
+                  <th scope="row" id="id_<?=$i?>"><?= $lyrics[$i]["id"] ?></th>
+                  <td id="Titre_<?=$i?>"><?= $lyrics[$i]["Titre"] ?></td>
+                  <td id="artist_<?=$i?>"><?= $lyrics[$i]["nom_artist"] ?></td>
+                  <td id="album_<?=$i?>"><?= $lyrics[$i]["nom_album"] ?></td>
+                  <td id="annee_<?=$i?>"><?= $lyrics[$i]["annee"] ?></td>
+                  <td><!-- Button trigger modal -->
+              <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop_<?= $i ?>">
+                Lyrics
+              </button>
+
+              <!-- Modal -->
+              <div class="modal fade" id="staticBackdrop_<?= $i ?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="staticBackdropLabel">Modal Lyrics</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body" id="lyrics_<?=$i?>"><?= $lyrics[$i]["lyrics"] ?></div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div></td>
                   <td>
                     <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                    <button type="button" id="upd" class="update btn btn-warning me-1"  data-bs-toggle="modal" data-bs-target="#exampleModal" ><i class="bi bi-pencil-square"></i></button>
+                    <button type="button" id="upd_<?=$i?>" onclick="model(this);" class="update btn btn-warning me-1"  data-bs-toggle="modal" data-bs-target="#exampleModal" ><i class="bi bi-pencil-square"></i></button>
                     <a href="../controllers/delete.php?idd=<?= $lyrics[$i]["id"]?>"><button type="button" class="btn btn-danger"><i class="bi bi-trash"></i></button></a>
                     </div>
                   </td>

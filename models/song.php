@@ -15,9 +15,9 @@ include_once '../Database/Database.php';
     return $re;
   }
   public  function update($id,$titre,$annee,$lyrics,$artist,$album){
-    $sql="UPDATE `song` SET `Titre`='$titre',`annee`='$annee',`lyrics`='$lyrics',`nom_artist`='$artist',`nom_album`='$album' WHERE `id`=$id";
+    $sql="UPDATE `song` SET `Titre`=`?`,`annee`=?,`lyrics`=?,`nom_artist`=?,`nom_album`=? WHERE `id`=?";
     $stmt = $this->connect()->prepare($sql);
-    $stmt->execute();
+    $stmt->execute(array($titre, $annee, $lyrics, $artist, $album, $id));
   }
   public function delete($id){
     $sql="DELETE FROM `song` WHERE `id`=$id";

@@ -85,30 +85,46 @@ save.onclick = function() {
     clearTasks();
 }
 
-for (let i = 0; i < upd.length; i++) {
-    // const element = array[i];
-    let dataup = [];
-    upd[i].addEventListener('click', function() {
+// for (let i = 0; i < upd.length; i++) {
+//     // const element = array[i];
+//     let dataup = [];
+//     upd[i].addEventListener('click', function() {
+//         save.style.display="none";
+//         plus.style.display="none";
+//         rv.style.display="none";
+//         send.style.display="block";
+        
+//         let td = this.parentElement.parentElement.parentElement;
+//         let index = td.getAttribute("data");
+//         // console.log();
+//         //console.log(td.children);
+//         for (let i = 0; i < td.children.length - 1; i++) {
+//             // console.log(td.children[i].innerHTML);
+//             dataup.push(td.children[i].innerHTML);
+//         }
+//         console.log(dataup);
+//         document.querySelector("#hid").value = dataup[0];
+//         document.querySelector("#recipient-titre_0").value = dataup[1];
+//         document.querySelector("#recipient-artiste_0").value = dataup[2];
+//         document.querySelector("#recipient-album_0").value = dataup[3];
+//         document.querySelector("#recipient-date_0").value = dataup[4];
+//         document.querySelector("#recipient-lyrics_0").value = document.getElementById(`lyrics_${index}`).textContent;
+//     })
+// }
+    function model(e){
         save.style.display="none";
         plus.style.display="none";
         rv.style.display="none";
         send.style.display="block";
-        
-        let td = this.parentElement.parentElement.parentElement;
-        //console.log(td);
-        //console.log(td.children);
-        for (let i = 0; i < td.children.length - 1; i++) {
-            // console.log(td.children[i].innerHTML);
-            dataup.push(td.children[i].innerHTML);
-        }
-        console.log(dataup);
-        document.querySelector("#hid").value = dataup[0];
-        document.querySelector("#recipient-titre_0").value = dataup[1];
-        document.querySelector("#recipient-artiste_0").value = dataup[2];
-        document.querySelector("#recipient-album_0").value = dataup[3];
-        document.querySelector("#recipient-date_0").value = dataup[4];
-        document.querySelector("#recipient-lyrics_0").value = dataup[5];
-    })
+            let td = e.parentElement.parentElement.parentElement;
+            console.log(td);
+            let index = td.getAttribute("data");
+            document.querySelector("#hid").value =  document.getElementById(`id_${index}`).textContent;
+            document.querySelector("#recipient-titre_0").value =  document.getElementById(`Titre_${index}`).textContent;
+            document.querySelector("#recipient-artiste_0").value =  document.getElementById(`artist_${index}`).textContent;
+            document.querySelector("#recipient-album_0").value =  document.getElementById(`album_${index}`).textContent;
+            document.querySelector("#recipient-date_0").value =  document.getElementById(`annee_${index}`).textContent;
+            document.querySelector("#recipient-lyrics_0").value = document.getElementById(`lyrics_${index}`).textContent;
 }
 
 send.onclick = function() {
